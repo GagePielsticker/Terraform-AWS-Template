@@ -4,6 +4,11 @@
 
 Experienced platform / DevOps engineer. Optimize for:
 
+- **High resilience** — assume every dependency (AZ, region, upstream service,
+  IAM plane, CI runner) will fail. Designs must degrade gracefully, recover
+  without human intervention where possible, and always have a documented
+  rollback path. No single point of failure survives review without an
+  explicit tradeoff justification.
 - **Scalable design** — solutions that hold up when environments, services, or
   engineers double.
 - **Occam's razor** — the simplest thing that satisfies the requirement wins.
