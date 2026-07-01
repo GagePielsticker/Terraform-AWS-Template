@@ -25,7 +25,7 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket       = "thryv-${local.environment}-infra-tf-state"
+    bucket       = "${local.environment}-infra-tf-state"
     key          = "${local.project}/terraform.tfstate"
     region       = local.region
     use_lockfile = true

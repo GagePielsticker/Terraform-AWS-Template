@@ -78,7 +78,7 @@ terraform/
 Also confirm the state bucket name pattern is what you want:
 
 ```hcl
-bucket = "thryv-${local.environment}-infra-tf-state"
+bucket = "${local.environment}-infra-tf-state"
 ```
 
 > 🪣 **The bucket must already exist** in each account before the first `terragrunt init` — Terragrunt won't create it for you with this config.
@@ -180,8 +180,8 @@ Every role needs read/write on the S3 state bucket. With `use_lockfile = true` i
         "s3:DeleteObject"
       ],
       "Resource": [
-        "arn:aws:s3:::thryv-<ENV>-infra-tf-state",
-        "arn:aws:s3:::thryv-<ENV>-infra-tf-state/*"
+        "arn:aws:s3:::<ENV>-infra-tf-state",
+        "arn:aws:s3:::<ENV>-infra-tf-state/*"
       ]
     }
   ]
